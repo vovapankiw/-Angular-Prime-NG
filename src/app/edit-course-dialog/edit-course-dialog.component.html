@@ -1,0 +1,37 @@
+<div class="edit-course-form" [formGroup]="form">
+  <div class="flex flex-column gap-3 mb-4">
+    <div class="field grid">
+      <label class="col-4">Course title:</label>
+      <input type="text" class="col-8" pInputText formControlName="title" />
+    </div>
+  
+    <div class="field grid">
+      <label class="col-4">Course description:</label>
+      <textarea
+        class="col-8" 
+        rows="5" 
+        cols="30" 
+        pInputTextarea 
+        formControlName="longDescription"
+      >
+  </textarea>
+    </div>
+    <div class="field grid">
+      <label class="col-4">Course image:</label>
+      <input type="text" class="col-8" pInputText formControlName="iconUrl" />
+    </div>
+  </div>
+
+  <div class="flex gap-2">
+
+    <p-button (click)="onSave()">
+      Save
+    </p-button>
+
+    <p-button class="btn" (click)="onClose()">
+      Cancel
+    </p-button>
+
+  </div>
+
+</div>

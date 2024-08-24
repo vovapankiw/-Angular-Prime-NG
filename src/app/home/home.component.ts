@@ -51,4 +51,14 @@ export class HomeComponent implements OnInit {
       });
     }
   }
+
+  onCourseUpdated(updateCoures: Course) {
+    const courses = this.#courses();
+
+    const newCourses = courses.map((course) => {
+      return course.id === updateCoures.id ? updateCoures : course;
+    });
+
+    this.#courses.set(newCourses);
+  }
 }

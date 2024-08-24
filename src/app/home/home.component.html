@@ -8,11 +8,11 @@
 
   <p-tabView [style]="{ 'max-width': '400px' }">
     <p-tabPanel header="Beginners">
-      <app-course-card-list [courses]="beginnerCourses()" />
+      <app-course-card-list [courses]="beginnerCourses()" (courseUpdated)="onCourseUpdated($event)" />
     </p-tabPanel>
 
     <p-tabPanel header="Advanced">
-      <app-course-card-list [courses]="advancedCourses()" />
+      <app-course-card-list [courses]="advancedCourses()" (courseUpdated)="onCourseUpdated($event)" />
     </p-tabPanel>
   </p-tabView>
 </div>
