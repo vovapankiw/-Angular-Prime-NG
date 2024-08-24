@@ -1,0 +1,18 @@
+<div class="flex flex-column gap-3 justify-center align-items-center">
+  <h3>All courses</h3>
+  <div class="flex gap-3 justify-center align-items-center flex-wrap">
+    <p-button>Add Course</p-button>
+    <p-button severity="contrast">toObservable</p-button>
+    <p-button severity="contrast">to Signal</p-button>
+  </div>
+
+  <p-tabView [style]="{ 'max-width': '400px' }">
+    <p-tabPanel header="Beginners">
+      <app-course-card-list [courses]="beginnerCourses()" />
+    </p-tabPanel>
+
+    <p-tabPanel header="Advanced">
+      <app-course-card-list [courses]="advancedCourses()" />
+    </p-tabPanel>
+  </p-tabView>
+</div>

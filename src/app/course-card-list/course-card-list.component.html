@@ -1,0 +1,22 @@
+@for (course of courses(); track course.id) {
+  <div class="course-card mb-4" #courseCards>
+    <div class="course-header pb-4 text-lg font-bold">
+      <span class="course-title">{{course.title}}</span>
+    </div>
+    <p-image class="course-image" height="200" width="100%" [src]="course.iconUrl" [imageStyle]="{'object-fit': 'cover'}" />
+    <div class="course-description">
+      <p>{{course.longDescription}}</p>
+    </div>
+    <div class="course-actions">
+      <p-button class="mr-2"
+              [routerLink]="['courses', course.id]" >
+        VIEW COURSE
+      </p-button>
+      <p-button class="mr-2" (click)="onEditCourse(course)">
+        EDIT
+      </p-button>
+      <img class="delete" src="/assets/delete.svg"
+        (click)="onCourseDeleted(course)">
+    </div>
+  </div>
+}

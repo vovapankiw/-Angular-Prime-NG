@@ -1,0 +1,16 @@
+<div>
+  <div class="flex flex-column justify-content-center align-content-center">
+    <h1>{{ course()?.title }}</h1>
+    <p-image class="course-image mb-4 mx-auto" [src]="course()?.iconUrl" />
+  </div>
+  <div class="table-container">
+    <p-table [value]="lessons()" [tableStyle]="{ 'min-width': '50rem' }" styleClass="p-datatable-striped" >
+      <ng-template pTemplate="body" let-lesson>
+          <tr>
+              <td>{{lesson.description}}</td>
+              <td>{{lesson.duration}}</td>
+          </tr>
+      </ng-template>
+  </p-table>
+  </div>
+</div>
